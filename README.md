@@ -1,4 +1,4 @@
-<h1 align="center">TELKOM : Technical Test - BE Developer
+<h1 align="center">Technical Test - BE Developer
 <br>( Aldo Ignata Chandra )</h1>
 
 <p align="center">
@@ -11,7 +11,7 @@
 </p>
 
 <p align="justify">
-    This repo ( TELKOM : Technical Test - BE Developer ) contains simple E-Commerce API ( Register, Login, User, Product, Cart ) for technical test backend developer purpose.
+    This repo ( Technical Test - BE Developer ) contains simple E-Commerce API ( Register, Login, User, Product, Cart ) for technical test backend developer purpose.
 </p>
 
 ## Requirments
