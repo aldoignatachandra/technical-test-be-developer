@@ -68,7 +68,30 @@ const updateCart = async (user, data, transaction) => {
         });
       } else if (cart.id) {
         // Update Item On Cart
-        // UNDER MAINTENANCE
+        let { id, ...updateData } = cart;
+        let oldCartItem = await Carts.findByPk(id, {
+          attributes: ['qty'],
+          raw: true,
+          transaction: t,
+        });
+        await Carts.update(updateData, { where: { id }, transaction: t });
+
+        // If Update Item Have Total Qty Changing
+        if (Number(oldCartItem.qty) > Number(updateData.qty)) {
+          // Increment Product Qty From List Product
+          await Products.increment('qty', {
+            by: Number(oldCartItem.qty) - Number(updateData.qty),
+            where: { id: updateData.itemId },
+            transaction: t,
+          });
+        } else if (Number(oldCartItem.qty) < Number(updateData.qty)) {
+          // Decrement Product Qty From List Product
+          await Products.decrement('qty', {
+            by: Number(updateData.qty) - Number(oldCartItem.qty),
+            where: { id: updateData.itemId },
+            transaction: t,
+          });
+        }
       }
     }
     if (!transaction) t.commit();
