@@ -6,7 +6,7 @@ let path = '/v1/user';
 
 const UserRoutes = (app) => {
   app.route(`${path}/details`).get(AuthMiddleware, user);
-  app.route(`${path}/update/:id`).patch(AuthMiddleware, validator('update'), update);
+  app.route(`${path}/update`).patch(AuthMiddleware, validator('update'), update);
 };
 
 export { UserRoutes };

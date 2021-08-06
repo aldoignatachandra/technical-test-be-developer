@@ -25,7 +25,7 @@ const user = async (req, res) => {
   }
 };
 
-// Update Data User
+// Update Data User (Only For User Login)
 const update = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -33,11 +33,10 @@ const update = async (req, res) => {
   }
 
   try {
-    const { id } = req.params;
     const { userId } = req.app.locals;
     const { firstName, lastName, telephone } = req.body;
 
-    const user = await findUserById(id);
+    const user = await findUserById(userId);
 
     // Check User Already Exist In Database Or Not
     if (!user) {
