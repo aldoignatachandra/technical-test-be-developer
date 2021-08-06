@@ -1,0 +1,513 @@
+{
+  "info": {
+    "_postman_id": "9641c0ef-fe97-42ae-bf64-1e65483841cf",
+    "name": "Telkom - Assignment BE Test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "email",
+                  "value": "ignata@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "ignata",
+                  "type": "text"
+                },
+                {
+                  "key": "confirmPassword",
+                  "value": "ignata",
+                  "type": "text"
+                },
+                {
+                  "key": "firstName",
+                  "value": "aldo",
+                  "type": "text"
+                },
+                {
+                  "key": "lastName",
+                  "value": "ignata",
+                  "type": "text"
+                },
+                {
+                  "key": "telephone",
+                  "value": "081234123798",
+                  "description": "No Tekphone Tidak Wajib",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "localhost:4000/v1/auth/register",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["v1", "auth", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "email",
+                  "value": "ignata@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "ignata",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "localhost:4000/v1/auth/login",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["v1", "auth", "login"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Update User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTYyODIxOTA5NiwiZXhwIjoxNjI4MzA1NDk2fQ.UIYzCOe8W9xQbMlBrC-7kt_74JiycyoQEmFabfbo8cM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "firstName",
+                  "value": "aldo",
+                  "type": "text"
+                },
+                {
+                  "key": "lastName",
+                  "value": "ignata chandra",
+                  "type": "text"
+                },
+                {
+                  "key": "telephone",
+                  "value": "081234567890",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "localhost:4000/v1/user/update",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["v1", "user", "update"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Details User",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTYyODIxOTA5NiwiZXhwIjoxNjI4MzA1NDk2fQ.UIYzCOe8W9xQbMlBrC-7kt_74JiycyoQEmFabfbo8cM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": {
+              "raw": "localhost:4000/v1/user/details",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["v1", "user", "details"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Product",
+      "item": [
+        {
+          "name": "Create New Product",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTYyODIxOTA5NiwiZXhwIjoxNjI4MzA1NDk2fQ.UIYzCOe8W9xQbMlBrC-7kt_74JiycyoQEmFabfbo8cM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "itemName",
+                  "value": "keyboard",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "1000000",
+                  "type": "text"
+                },
+                {
+                  "key": "type",
+                  "value": "eletronik",
+                  "type": "text"
+                },
+                {
+                  "key": "uom",
+                  "value": "pcs",
+                  "type": "text"
+                },
+                {
+                  "key": "qty",
+                  "value": "10",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Mechanical Keyboard",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "localhost:4000/v1/product/create",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["v1", "product", "create"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTYyODIxOTA5NiwiZXhwIjoxNjI4MzA1NDk2fQ.UIYzCOe8W9xQbMlBrC-7kt_74JiycyoQEmFabfbo8cM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "itemName",
+                  "value": "keyboard",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "950000",
+                  "type": "text"
+                },
+                {
+                  "key": "type",
+                  "value": "eletronik",
+                  "type": "text"
+                },
+                {
+                  "key": "uom",
+                  "value": "pcs",
+                  "type": "text"
+                },
+                {
+                  "key": "qty",
+                  "value": "10",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Mechanical Keyboard",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "localhost:4000/v1/product/update/8",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["v1", "product", "update", "8"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTYyODIxOTA5NiwiZXhwIjoxNjI4MzA1NDk2fQ.UIYzCOe8W9xQbMlBrC-7kt_74JiycyoQEmFabfbo8cM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": {
+              "raw": "localhost:4000/v1/product/delete/8",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["v1", "product", "delete", "8"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Detail Product",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTYyODIxOTA5NiwiZXhwIjoxNjI4MzA1NDk2fQ.UIYzCOe8W9xQbMlBrC-7kt_74JiycyoQEmFabfbo8cM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": {
+              "raw": "localhost:4000/v1/product/details/8",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["v1", "product", "details", "8"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get List Product",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTYyODIxOTA5NiwiZXhwIjoxNjI4MzA1NDk2fQ.UIYzCOe8W9xQbMlBrC-7kt_74JiycyoQEmFabfbo8cM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": {
+              "raw": "localhost:4000/v1/product/list?limit=10&page=1&search=&myProduct=0&sortPrice=desc",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["v1", "product", "list"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "search",
+                  "value": "",
+                  "description": "Search Item name"
+                },
+                {
+                  "key": "myProduct",
+                  "value": "0",
+                  "description": "Default = 0, For See Your Own Product = 1"
+                },
+                {
+                  "key": "sortPrice",
+                  "value": "desc",
+                  "description": "desc/asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cart",
+      "item": [
+        {
+          "name": "User Cart",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTYyODIxOTU3MiwiZXhwIjoxNjI4MzA1OTcyfQ.81bFRW3wwYtIfxbUrf25Us4wivDaSpfa1zsqUoPz69M",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    { \"itemId\": 1, \"qty\": 5, \"price\": 1000000, \"total\": 5000000 },\n    { \"itemId\": 2, \"qty\": 1, \"price\": 75000, \"total\": 75000 }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:4000/v1/cart/user",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["v1", "cart", "user"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Data User Cart",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTYyODIxOTU3MiwiZXhwIjoxNjI4MzA1OTcyfQ.81bFRW3wwYtIfxbUrf25Us4wivDaSpfa1zsqUoPz69M",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:4000/v1/cart/user?search=&order=id&sort=desc",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["v1", "cart", "user"],
+              "query": [
+                {
+                  "key": "search",
+                  "value": ""
+                },
+                {
+                  "key": "order",
+                  "value": "id"
+                },
+                {
+                  "key": "sort",
+                  "value": "desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Hello World",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:4000/hello",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["hello"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
