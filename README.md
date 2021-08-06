@@ -36,7 +36,7 @@
 4. Run `yarn db:create` for create database
 5. Run `yarn db:migrate` for run migration file
 6. Run `yarn db:seed` for run seeder file
-7. Run `db:reset` for run (drop db -> createdb -> migration -> seeder)
+7. Run `yarn db:reset` for run (drop db -> createdb -> migration -> seeder)
 8. Run `yarn dev` for running the program
 
 ## List API ( DOCS )
